@@ -27,11 +27,13 @@ app.set("view engine", "ejs");
 // importing the all the routes
 const demo = require("./routes/demo")
 const userRoute = require("./routes/userRoute")
+const productRoute =  require("./routes/productRoute")
 
 
 //using middleware
 app.use("/v1/",demo)
 app.use("/api/v1",userRoute)
+app.use("/api/v1",productRoute)
 app.get("/signuptest", (req, res) => {
     res.render("signuptest");
   });
